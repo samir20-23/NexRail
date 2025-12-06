@@ -2,22 +2,22 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 .nav {
-    width: 100%; 
+    width: 100%;
+    height: 40px;
     display: flex;
     justify-content: space-around;
     align-items: start;
     max-height: 38px;
-
-
+    min-width: 28px;
+    position: relative;
 
 }
 
-.nav .muneBtn { 
-    position: absolute; 
+.nav .muneBtn {
+    position: absolute;
     left: 50px;
     top: 10px;
 }
@@ -32,14 +32,16 @@
 }
 
 .nav .logo-box {
-    position: relative;
+    position: absolute;
     top: -1.1px;
+    left: 40%;
+    /* d 1 */
     display: flex;
     align-items: center;
     justify-content: center;
     max-height: 38px;
     min-width: 122px;
-    border: none; 
+    border: none;
 }
 
 .nav .logo-box svg {
@@ -51,4 +53,117 @@
     position: absolute;
     color: black;
     font-size: 20px;
+}
+
+.centerbox {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    /* top: 140px; */
+    top: 125px;
+    /* s 2 */
+}
+
+.centerbox {
+    display: flex;
+    padding: 0 35px 0 35px;
+}
+
+.centerbox .section1 .part1 {
+    box-shadow: 0 0 25px 6px #6c8ba8e6 inset;
+    border: none;
+    filter: blur(0.4px);
+    padding: 5px 0px 5px 0px;
+
+}
+
+.centerbox .section1 {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+
+}
+
+
+.part2 p {
+    font-size: 30px;
+    width: 430px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transform: scaleX(1.5);
+    display: inline block;
+    position: relative;
+    left: 110px;
+}
+
+.part2 p span {
+    color: #c4ced7e2;
+    opacity: 0.8;
+}
+
+.section1 .part2 .btn {
+    border: 1px solid white;
+    width: 124px;
+    height: 38px;
+    border-radius: 30px;
+    background-image: url("/btn.png");
+    background-size: cover;
+    position: relative;
+    top: -48px;
+    left: 250px;
+}
+
+.section1 .part3 {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+.part3 .box1,
+.box2 {
+    position: relative;
+    top: -32px;
+}
+
+.part3 .box1 {
+    width: 230px;
+    background-color: white;
+    color: black;
+    border-radius: 29px;
+    padding: 21px 12px 21px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.box1 h1 {
+    font-size: 25px;
+}
+
+.box1 p {
+    color: rgb(62, 58, 52);
+    font-size: 17px;
+}
+
+.part3 .box2 {
+    width: 230px;
+    background-color: white;
+    color: black;
+    border-radius: 29px;
+    padding: 21px 12px 21px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.box2 h1 {
+    font-size: 25px;
+}
+
+.box2 p {
+    color: rgb(62, 58, 52);
+    font-size: 17px;
 }
