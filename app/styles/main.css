@@ -2,7 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: padding 1s ease;
+
 }
+
+:root {
+    --color1: rgba(255, 255, 255, 0.845);
+    --color2: black;
+    --border: #31B0F5
+}
+
 
 .nav {
     width: 100%;
@@ -13,6 +22,7 @@
     max-height: 38px;
     min-width: 28px;
     position: relative;
+    top: 10px;
 
 }
 
@@ -20,28 +30,39 @@
     position: absolute;
     left: 50px;
     top: 10px;
+
 }
 
 .muneBtn button {
-    padding: 5px 16px 5px 16px;
-    border: 1.5px solid white;
+    border: 1.5px solid var(--border);
     border-radius: 200px;
     background: none;
-    color: white;
+    color: var(--color1);
     font-size: 13px;
+    cursor: pointer;
+    animation: 0.8s muneBtn 0.5s ease forwards;
+}
+
+/* animation: 1s muneBtn 1s ease forwards; */
+
+@keyframes muneBtn {
+    100% {
+        padding: 5px 16px 5px 16px;
+
+    }
 }
 
 .nav .logo-box {
     position: absolute;
-    top: -1.1px;
-    left: 40%;
-    /* d 1 */
+    top: -10px;
     display: flex;
     align-items: center;
     justify-content: center;
     max-height: 38px;
     min-width: 122px;
     border: none;
+    user-select: none;
+    cursor: pointer;
 }
 
 .nav .logo-box svg {
@@ -51,36 +72,61 @@
 
 .nav .logo-box p {
     position: absolute;
-    color: black;
+    color: var(--color2);
     font-size: 20px;
+}
+
+.nav .bookBtn button { 
+    animation: 0.8s bookBtn 0.5s ease forwards;
+}
+ 
+/* animation: 0.8s bookBtn 0.5s ease forwards;*/
+
+@keyframes bookBtn {
+    100% {
+        padding: 2px 6px 2px 6px;
+    }
 }
 
 .centerbox {
     width: 100%;
-    height: 70%;
-    position: relative;
-    /* top: 140px; */
-    top: 125px;
-    /* s 2 */
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    padding: 0 10px 40px 10px;
+    animation: 1s centerBox 1s ease forwards;
+
 }
 
-.centerbox {
-    display: flex;
-    padding: 0 35px 0 35px;
+/* animation: 1s centerBox 1s ease forwards; */
+
+@keyframes centerBox {
+    100% {
+        padding: 0 45px 45px 45px;
+    }
 }
 
 .centerbox .section1 .part1 {
     box-shadow: 0 0 25px 6px #6c8ba8e6 inset;
     border: none;
     filter: blur(0.4px);
-    padding: 5px 0px 5px 0px;
 
+    animation: 0.8s part1 0.5s ease forwards;
+}
+
+/* animation: 0.8s part1 0.5s ease forwards;*/
+
+@keyframes part1 {
+    100% {
+        padding: 5px 0px 5px 0px;
+    }
 }
 
 .centerbox .section1 {
     display: flex;
     gap: 16px;
     flex-direction: column;
+
 
 }
 
@@ -93,23 +139,51 @@
     display: inline block;
     position: relative;
     left: 110px;
+    font-family: "Clash Display", Impact, Haettenschweiler, "Arial Narrow Bold", system-ui, sans-serif;
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.18);
+    text-shadow: 0 6px 22px rgba(2, 8, 12, 0.45);
+    /* line-height: 0.86; */
+
+    animation: 0.9s part2 0.6s ease forwards;
+}
+
+/* animation: 0.8s part2 0.5s ease forwards;*/
+
+@keyframes part2 {
+    100% {
+        letter-spacing: 0.02em;
+        word-break: break-word;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 900;
+    }
 }
 
 .part2 p span {
-    color: #c4ced7e2;
-    opacity: 0.8;
+    /* color: #c4ced7e2;
+    opacity: 0.8; */
+    display: block;
+    margin-top: -0.14em;
+    /* negative gap to overlap lines */
+    color: rgba(255, 255, 255, 0.34);
+    /* muted grey look */
+    font-weight: 800;
+    line-height: 0.92;
+    /* slightly taller inside muted block */
+    -webkit-text-stroke: 0.2px rgba(0, 0, 0, 0.12);
+    text-shadow: none;
 }
 
 .section1 .part2 .btn {
-    border: 1px solid white;
+    border: 1px solid var(--color1);
     width: 124px;
     height: 38px;
     border-radius: 30px;
     background-image: url("/btn.png");
     background-size: cover;
     position: relative;
-    top: -48px;
-    left: 250px;
+    top: -40px;
+    cursor: pointer;
+    left: 245px;
 }
 
 .section1 .part3 {
@@ -121,13 +195,13 @@
 .part3 .box1,
 .box2 {
     position: relative;
-    top: -32px;
 }
 
 .part3 .box1 {
+    border: 2px solid var(--border);
     width: 230px;
-    background-color: white;
-    color: black;
+    background-color: var(--color1);
+    color: var(--color2);
     border-radius: 29px;
     padding: 21px 12px 21px 12px;
     display: flex;
@@ -147,9 +221,10 @@
 }
 
 .part3 .box2 {
+    border: 2px solid var(--border);
     width: 230px;
-    background-color: white;
-    color: black;
+    background-color: var(--color1);
+    color: var(--color2);
     border-radius: 29px;
     padding: 21px 12px 21px 12px;
     display: flex;
@@ -166,4 +241,104 @@
 .box2 p {
     color: rgb(62, 58, 52);
     font-size: 17px;
+}
+
+.section2 {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    padding: 0 10px 40px 10px;
+
+
+}
+
+.section2 .partt1 {
+    border: 2px solid var(--border);
+    position: absolute;
+    width: 300px;
+    background-color: var(--color1);
+    color: var(--color2);
+    border-radius: 24px;
+    padding: 25px 16px 25px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section2 .partt1 h1 {
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.section2 .partt1 p {
+    color: rgb(62, 58, 52);
+    font-size: 17px;
+}
+
+.section2 .partt2 {
+    border: 2px solid var(--border);
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    border-radius: 30px;
+    background: var(--color1);
+    color: var(--color2);
+    cursor: pointer;
+    transition: padding 0.5s ease;
+}
+
+.partt2:hover {
+    transition: padding 1s ease;
+    box-shadow: 0 0 10px -2px rgba(214, 242, 247, 0.507);
+
+}
+
+.section2 .partt2 div {
+    font-size: 19px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 40px;
+}
+
+.section2 .partt2 p {
+    font-size: 15px;
+    position: absolute;
+}
+
+.partt2 div svg {
+    width: 105px;
+    height: 51px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+}
+
+.section2 .partt2 #shape {
+    animation: shape infinite 9s;
+}
+
+@keyframes shape {
+    0% {
+        transform: rotate(0deg) translate(5px, -5px);
+    }
+
+    50% {
+        transform: rotate(3deg) translate(-5px, -2px);
+
+
+    }
+
+    100% {
+        transform: rotate(0deg) translate(5px, -5px);
+
+    }
 }
