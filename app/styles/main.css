@@ -7,9 +7,9 @@
 }
 
 :root {
-    --color1: rgba(255, 255, 255, 0.845);
+    --color1: rgba(255, 255, 255, 0.97);
     --color2: black;
-    --border: #31B0F5
+    --border: rgba(255, 255, 255, 0.212);
 }
 
 
@@ -28,13 +28,15 @@
 
 .nav .muneBtn {
     position: absolute;
-    left: 50px;
+    left: 40px;
     top: 10px;
+    display: flex;
+    gap: 12px;
 
 }
 
 .muneBtn button {
-    border: 1.5px solid var(--border);
+    border: 1.5px solid rgba(255, 255, 255, 0.769);
     border-radius: 200px;
     background: none;
     color: var(--color1);
@@ -74,17 +76,20 @@
     position: absolute;
     color: var(--color2);
     font-size: 20px;
+    top: 15px;
+
 }
 
-.nav .bookBtn button { 
+.nav .bookBtn button {
     animation: 0.8s bookBtn 0.5s ease forwards;
+
 }
- 
+
 /* animation: 0.8s bookBtn 0.5s ease forwards;*/
 
 @keyframes bookBtn {
     100% {
-        padding: 2px 6px 2px 6px;
+        padding: 6px 2px 6px 5px;
     }
 }
 
@@ -104,6 +109,21 @@
     100% {
         padding: 0 45px 45px 45px;
     }
+}
+
+.blurpart1 {
+    filter: blur(28px); 
+    width: 100%;
+    height: 43px;
+    animation: .8s .5s forwards part1;
+    position: absolute; 
+
+    border-radius: 100px; 
+        box-shadow: 0 0 25px 6px #446480a7 inset;
+    border: none;
+    filter: blur(0.4px);
+
+    animation: 0.8s part1 0.5s ease forwards;
 }
 
 .centerbox .section1 .part1 {
@@ -131,30 +151,18 @@
 }
 
 
-.part2 p {
-    font-size: 30px;
-    width: 430px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    transform: scaleX(1.5);
-    display: inline block;
+.part2 svg {
     position: relative;
-    left: 110px;
-    font-family: "Clash Display", Impact, Haettenschweiler, "Arial Narrow Bold", system-ui, sans-serif;
-    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.18);
-    text-shadow: 0 6px 22px rgba(2, 8, 12, 0.45);
-    /* line-height: 0.86; */
+    left: -100px;
 
     animation: 0.9s part2 0.6s ease forwards;
 }
 
-/* animation: 0.8s part2 0.5s ease forwards;*/
 
 @keyframes part2 {
     100% {
-        letter-spacing: 0.02em;
-        word-break: break-word;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 900;
+        left: -55px;
+
     }
 }
 
@@ -181,9 +189,19 @@
     background-image: url("/btn.png");
     background-size: cover;
     position: relative;
-    top: -40px;
+    top: -66px;
     cursor: pointer;
     left: 245px;
+    animation: 0.9s btn3 0.6s ease forwards;
+
+}
+
+@keyframes btn3 {
+    100% {
+        top: -36px;
+
+
+    }
 }
 
 .section1 .part3 {
@@ -283,12 +301,20 @@
     border: 2px solid var(--border);
     position: absolute;
     bottom: 0;
-    width: 300px;
     border-radius: 30px;
     background: var(--color1);
     color: var(--color2);
     cursor: pointer;
     transition: padding 0.5s ease;
+}
+
+.btn2svg2 {
+    width: 60px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    animation: shape infinite 7s;
+
 }
 
 .partt2:hover {
@@ -322,23 +348,24 @@
     right: 0;
 }
 
-.section2 .partt2 #shape {
-    animation: shape infinite 9s;
-}
 
 @keyframes shape {
     0% {
-        transform: rotate(0deg) translate(5px, -5px);
+        transform: rotate(0deg) translate(9px, -9px);
+        opacity: 0.6;
+
     }
 
     50% {
         transform: rotate(3deg) translate(-5px, -2px);
+        opacity: 0.3;
 
 
     }
 
     100% {
-        transform: rotate(0deg) translate(5px, -5px);
+        transform: rotate(0deg) translate(9px, -9px);
+        opacity: 0.6;
 
     }
 }
